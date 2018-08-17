@@ -16,7 +16,7 @@ var computerGuess = letterChoices [Math.floor(Math.random()*letterChoices.length
 //guesses left function
 
 var updateGuessesLeft = function() {
-    document.querySelector('#guessLeft').innerHTML = "Guesses Left: " + guessesLeft;
+    document.querySelector('#guessLeft').textContent = "Guesses Left: " + guessesLeft;
 };
 
 //letter to guess function
@@ -26,7 +26,7 @@ var updateletterToGuess = function(){
 };
 
 var updateGuessesSoFar = function(){
-    document.querySelector('#let').innerHTML = "Your guesses so far: " + guessedLetters.join(', ');
+    document.querySelector('#let').textContent = "Your guesses so far: " + guessedLetters.join(', ');
 };
 
 //reset
@@ -61,13 +61,13 @@ document.onkeyup = function(event) {
         if (guessesLeft > 0){
             if (userGuess === letterToGuess){
                 wins++;
-                document.querySelector('#wins').innerHTML = 'Wins: ' + wins;
+                document.querySelector('#wins').textContent = 'Wins: ' + wins;
                 alert("WITCHCRAFT!! YOU'RE A WITCH!");
                 reset();
             }
         } else if (guessesLeft == 0){
             losses++;
-            document.querySelector('#losses').innerHTML = 'Losses: ' + losses;
+            document.querySelector('#losses').textContent = 'Losses: ' + losses;
             alert("You only had a 34.6% chance of getting it right. Don't feel too bad.");
 
             reset();
